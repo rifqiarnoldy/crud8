@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductController;
 
 /*
@@ -26,4 +27,5 @@ Route::group(["middleware" => ['auth:sanctum', 'verified']], function () {
     Route::view('/dashboard', 'dashboard')->name('dashboard');
 
     Route::resource('product', ProductController::class);
+    Route::resource('post', PostController::class);
 });

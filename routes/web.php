@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,4 +24,6 @@ Route::get('/', function () {
 
 Route::group(["middleware" => ['auth:sanctum', 'verified']], function () {
     Route::view('/dashboard', 'dashboard')->name('dashboard');
+
+    Route::resource('product', ProductController::class);
 });
